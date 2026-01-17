@@ -67,8 +67,8 @@ pub trait Stylize: Sized {
     /// For example: FFFFFF
     fn hex(self, hex: &str) -> Paint<Self> {
         if let Some(rgb) = RGB::new_from_hex(hex) {
-            let updated_self = self.paint().set_rgb(rgb);
-            updated_self
+            
+            self.paint().set_rgb(rgb)
         } else {
             self.paint()
         }
@@ -78,8 +78,8 @@ pub trait Stylize: Sized {
     /// For example: 333333
     fn bg_hex(self, hex: &str) -> Paint<Self> {
         if let Some(rgb) = RGB::new_from_hex(hex) {
-            let updated_self = self.paint().set_bg_rgb(rgb);
-            updated_self
+            
+            self.paint().set_bg_rgb(rgb)
         } else {
             self.paint()
         }

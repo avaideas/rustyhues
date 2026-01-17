@@ -2,7 +2,12 @@
 name = "rustyhues"
 version = "1.0.0"
 edition = "2021"
+description = "Lightweight, zero-macro ANSI color styling for Rust CLIs, with smart terminal detection, RGB/hex support, conditional styling, and configurable semantic styles."
 license = "MIT OR Apache-2.0"
+repository = "https://github.com/avaideas/rustyhues"
+readme = "README.md"
+keywords = ["ansi", "terminal", "color", "cli", "styling"]
+categories = ["command-line-interface", "command-line-utilities"]
 
 [dependencies]
 [target.'cfg(unix)'.dependencies]

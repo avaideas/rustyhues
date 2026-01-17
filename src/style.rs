@@ -181,7 +181,7 @@ impl RGB {
             let r = u8::from_str_radix(&hex_str[0..2], 16).unwrap();
             let g = u8::from_str_radix(&hex_str[2..4], 16).unwrap();
             let b = u8::from_str_radix(&hex_str[4..6], 16).unwrap();
-            return Some(Self { r: r, g: g, b: b });
+            Some(Self { r, g, b })
         } else {
             let mut hex_chars = hex_str.chars();
             let r_char = hex_chars.next().unwrap();
@@ -190,7 +190,7 @@ impl RGB {
             let r = u8::from_str_radix(&format!("{r_char}{r_char}"), 16).unwrap();
             let g = u8::from_str_radix(&format!("{g_char}{g_char}"), 16).unwrap();
             let b = u8::from_str_radix(&format!("{b_char}{b_char}"), 16).unwrap();
-            return Some(Self { r: r, g: g, b: b });
+            Some(Self { r, g, b })
         }
     }
 

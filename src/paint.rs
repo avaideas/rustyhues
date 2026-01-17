@@ -448,10 +448,8 @@ impl<T: fmt::Display> fmt::Display for Paint<T> {
                         if should_paint {
                             if true_color_allowed() {
                                 push_raw(f, &mut first, |f| rgb.write_fg_sgr(f))?;
-                            } else {
-                                if let Some(color) = rgb.closest_color() {
-                                    push_raw(f, &mut first, |f| f.write_str(color.fg_code()))?;
-                                }
+                            } else if let Some(color) = rgb.closest_color() {
+                                push_raw(f, &mut first, |f| f.write_str(color.fg_code()))?;
                             }
                         }
                     }
@@ -459,10 +457,8 @@ impl<T: fmt::Display> fmt::Display for Paint<T> {
                         if should_paint {
                             if true_color_allowed() {
                                 push_raw(f, &mut first, |f| rgb.write_bg_sgr(f))?;
-                            } else {
-                                if let Some(color) = rgb.closest_color() {
-                                    push_raw(f, &mut first, |f| f.write_str(color.bg_code()))?;
-                                }
+                            } else if let Some(color) = rgb.closest_color() {
+                                push_raw(f, &mut first, |f| f.write_str(color.bg_code()))?;
                             }
                         }
                     }
